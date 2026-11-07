@@ -1,0 +1,3 @@
+Welcome to the Mail Server system! 
+
+Thank you for using our service.

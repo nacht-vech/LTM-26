@@ -1,0 +1,57 @@
+[ACCOUNT]
+Email=ninhleduy192@gmail.com
+Password=12345678
+CreatedAt=2026-10-26 14:39:52
+LastLogin=2026-11-02 00:38:09
+
+[INBOX]
+---MSG---
+Time=2026-10-26 14:57:05
+Sender=nekonn@nomail.com
+Receiver=ninhleduy192@gmail.com
+Subject=fak
+Body=22
+File=22
+---END_MSG---
+---MSG---
+Time=2026-10-26 14:57:50
+Sender=nekonn@nomail.com
+Receiver=ninhleduy192@gmail.com
+Subject=dinh kem
+Body=22
+File=ado.jpg (21776 bytes - E:\gif_n_pic\ado.jpg)
+---END_MSG---
+---MSG---
+Time=2026-10-26 15:13:25
+Sender=nekonn@nomail.com
+Receiver=ninhleduy192@gmail.com
+Subject=123123
+Body=1
+File=ado.jpg
+---END_MSG---
+
+[SENT]
+---MSG---
+Time=2026-10-26 14:55:46
+Sender=ninhleduy192@gmail.com
+Receiver=nekonn@nomail.com
+Subject=no nam sao
+Body=tuoi lz
+File=22
+---END_MSG---
+---MSG---
+Time=2026-10-26 14:56:56
+Sender=ninhleduy192@gmail.com
+Receiver=nekonn@nomail.com
+Subject=no nam sao
+Body=tuoi lz
+File=22
+---END_MSG---
+---MSG---
+Time=2026-10-26 14:57:51
+Sender=ninhleduy192@gmail.com
+Receiver=nekonn@nomail.com
+Subject=no nam sao
+Body=tuoi lz
+File=image8.jpg (627649 bytes - D:\Image\image8.jpg)
+---END_MSG---

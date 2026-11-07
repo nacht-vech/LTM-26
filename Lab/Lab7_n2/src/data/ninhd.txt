@@ -1,0 +1,8 @@
+[ACCOUNT]
+Password=12345678
+CreatedAt=2026-10-26 14:37:24
+LastLogin=2026-10-26 14:37:24
+
+[INBOX]
+
+[SENT]

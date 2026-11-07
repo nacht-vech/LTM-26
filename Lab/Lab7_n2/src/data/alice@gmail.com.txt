@@ -1,0 +1,9 @@
+[ACCOUNT]
+Email=alice@gmail.com
+Password=12345678
+CreatedAt=2026-10-26 14:39:20
+LastLogin=2026-10-26 14:39:20
+
+[INBOX]
+
+[SENT]

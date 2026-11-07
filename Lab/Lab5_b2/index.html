@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Client Workspace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800 overflow-hidden h-screen flex">
+
+    <div id="auth-screen" class="absolute inset-0 bg-gray-100 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-2xl shadow-lg w-96">
+            <div class="flex justify-center mb-6">
+                <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 9h20L12 2zm0 2.5l7 5v10H5v-10l7-5z" />
+                </svg>
+            </div>
+            <h2 class="text-2xl font-semibold text-center mb-6 text-gray-700">Đăng nhập Mail</h2>
+            <div class="mb-4">
+                <input type="email" id="auth-email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Email (vd: abc@gmail.com)">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="auth-password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Mật khẩu (tối thiểu 6 ký tự)">
+            </div>
+            <p id="auth-error" class="text-red-500 text-sm mb-4 hidden"></p>
+            <div class="flex gap-3">
+                <button onclick="handleAuth('LOGIN')"
+                    class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Đăng
+                    nhập</button>
+                <button onclick="handleAuth('CREATE')"
+                    class="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg border hover:bg-gray-200 transition">Tạo tài
+                    khoản</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-64 bg-gray-50 flex flex-col p-4 border-r border-gray-200">
+        <div class="text-xl font-normal text-gray-700 mb-6 flex items-center gap-2">
+            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 9h20L12 2zm0 2.5l7 5v10H5v-10l7-5z" />
+            </svg>
+            Mail Desktop
+        </div>
+
+        <button onclick="showCompose()"
+            class="bg-[#c2e7ff] hover:bg-[#b3dcf5] text-[#001d35] font-medium py-4 px-6 rounded-2xl shadow-sm mb-6 flex items-center gap-3 w-fit transition-all">
+            Soạn thư
+        </button>
+
+        <nav class="flex flex-col gap-1 text-sm font-medium">
+            <a href="#" id="nav-inbox" onclick="refreshInbox()"
+                class="flex items-center gap-3 p-3 bg-[#d3e3fd] text-[#041e49] rounded-r-full font-bold">
+                Hộp thư đến
+            </a>
+            <a href="#" id="nav-sent" onclick="refreshSent()"
+                class="flex items-center gap-3 p-3 text-gray-700 hover:bg-gray-100 rounded-r-full font-medium transition-colors">
+                Thư đã gửi
+            </a>
+            <div class="mt-auto pt-4 border-t border-gray-200 text-xs text-gray-500">
+                Đang đăng nhập:<br>
+                <b id="current-user-display" class="text-gray-700 text-sm"></b>
+                <button onclick="logout()" class="text-blue-500 hover:underline mt-2 block font-semibold">Đăng
+                    xuất</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="w-80 bg-white border-r border-gray-200 flex flex-col">
+        <div class="p-3 border-b border-gray-100 flex items-center bg-white sticky top-0">
+            <input type="text" placeholder="Tìm kiếm trong thư..."
+                class="w-full bg-[#f1f3f4] border-none rounded-lg p-2.5 text-sm outline-none">
+        </div>
+        <div id="mail-list" class="flex-1 overflow-y-auto"></div>
+    </div>
+
+    <div class="flex-1 bg-white flex flex-col relative">
+        <div id="toast"
+            class="absolute top-4 right-4 px-4 py-2 rounded shadow-lg text-white font-medium transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        </div>
+
+        <div id="view-mail-panel" class="flex-1 p-8 overflow-y-auto hidden">
+            <h2 class="text-2xl font-normal mb-6 text-gray-800">Nội dung thư</h2>
+            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner">
+                <pre id="mail-content"
+                    class="whitespace-pre-wrap font-sans text-gray-700 leading-relaxed break-words"></pre>
+                <div id="mail-media" class="mt-4 flex flex-col items-start gap-2"></div>
+            </div>
+        </div>
+
+        <div id="compose-panel" class="flex-1 p-8 flex flex-col hidden">
+            <h2 class="text-xl font-medium mb-6 text-gray-700">Thư mới</h2>
+            <div class="border-b border-gray-200 py-2 mb-4 flex items-center">
+                <span class="text-gray-500 w-16 text-sm">Đến</span>
+                <input type="email" id="compose-receiver" class="flex-1 outline-none text-gray-800 text-sm"
+                    placeholder="nguoinhan@domain.com">
+            </div>
+
+            <div class="border-b border-gray-200 py-2 mb-4 flex items-center">
+                <span class="text-gray-500 w-16 text-sm">Chủ đề</span>
+                <input type="text" id="compose-subject" class="flex-1 outline-none text-gray-800 text-sm font-medium"
+                    placeholder="Nhập tiêu đề thư...">
+            </div>
+
+            <textarea id="compose-content" class="flex-1 w-full outline-none resize-none text-gray-800 text-sm p-2 mt-2"
+                placeholder="Viết nội dung thư ở đây..."></textarea>
+
+            <div class="mt-4 flex items-center gap-4 border-t pt-4">
+                <button onclick="sendMail()"
+                    class="bg-[#0b57d0] hover:bg-blue-700 text-white font-medium py-2 px-8 rounded-full shadow transition-all">
+                    Gửi thư
+                </button>
+                <input type="file" id="compose-file"
+                    class="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-[#0b57d0] hover:file:bg-blue-100 cursor-pointer"
+                    accept="image/*">
+            </div>
+        </div>
+
+        <div id="empty-panel" class="flex-1 flex items-center justify-center text-gray-400">
+            Chọn một thư để đọc hoặc bắt đầu soạn thư mới
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+# ===========================================================================
+# FILE DU LIEU RIENG CUA TAI KHOAN: sinhvien (user_sinhvien.txt)
+# Luu chung trong 1 file duy nhat cua tai khoan nay:
+#   1. ACCOUNT          : Thong tin tai khoan, gio tao, gio dang nhap gan nhat, so lan login
+#   2. LOGIN_EVENT      : Lich su dang nhap chi tiet kem IP/Host may tram
+#   3. BOOKMARK         : Cac trang web yeu thich cua tai khoan sinhvien
+#   4. REQUEST_FILE_LOG : Lich su GET/POST/HEAD, thong ke the HTML & File gui/nhan
+# Moi thay doi cua tai khoan sinhvien deu cap nhat truc tiep trong file nay.
+# ===========================================================================
+ACCOUNT|sinhvien|123456|Sinh Vien Mang May Tinh VKU|2026-10-18 21:55:57|Chua dang nhap|0
+BOOKMARK|BM01|sinhvien|Trang chu VKU|http://vku.udn.vn|2026-10-18 21:55:57
+BOOKMARK|BM02|sinhvien|Bao Tuoi Tre|https://www.tuoitre.vn|2026-10-18 21:55:57
+BOOKMARK|BM03|sinhvien|Server Test Localhost (GET/POST/HEAD)|http://localhost:8088/vku-demo|2026-10-18 21:55:57
+BOOKMARK|BM04|sinhvien|Example Standard HTML|http://example.com|2026-10-18 21:55:57

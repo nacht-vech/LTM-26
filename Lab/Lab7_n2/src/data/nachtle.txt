@@ -1,0 +1,8 @@
+[ACCOUNT]
+Password=159753852
+CreatedAt=2026-10-26 14:20:18
+LastLogin=2026-10-26 14:20:18
+
+[INBOX]
+
+[SENT]

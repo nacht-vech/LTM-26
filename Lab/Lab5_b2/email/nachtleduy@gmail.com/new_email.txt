@@ -1,0 +1,6 @@
+Welcome to the Mail Server system! 
+
+Thank you for trusting and using our service. We hope you have a great, comfortable, and convenient experience sending and receiving emails through this system.
+
+Best regards,
+Mail Server Team

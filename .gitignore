@@ -1,0 +1,19 @@
+# Node.js & Electron dependencies (prevents the 234MB electron.exe error)
+node_modules/
+**/node_modules/
+dist/
+
+# Compiled Java files & build folders
+*.class
+*.jar
+*.war
+target/
+build/
+bin/
+out/
+
+# IDE & OS metadata files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+# ===========================================================================
+# FILE DU LIEU RIENG CUA TAI KHOAN: admin (user_admin.txt)
+# Luu chung trong 1 file duy nhat cua tai khoan nay:
+#   1. ACCOUNT          : Thong tin tai khoan, gio tao, gio dang nhap gan nhat, so lan login
+#   2. LOGIN_EVENT      : Lich su dang nhap chi tiet kem IP/Host may tram
+#   3. BOOKMARK         : Cac trang web yeu thich cua tai khoan admin
+#   4. REQUEST_FILE_LOG : Lich su GET/POST/HEAD, thong ke the HTML & File gui/nhan
+# Moi thay doi cua tai khoan admin deu cap nhat truc tiep trong file nay.
+# ===========================================================================
+ACCOUNT|admin|123456|Quan Tri Vien VKU|2026-10-18 21:55:57|2026-10-26 13:26:26|3
+BOOKMARK|BM01|admin|Trang chu VKU|http://vku.udn.vn|2026-10-18 21:55:57
+BOOKMARK|BM02|admin|Bao Tuoi Tre|https://www.tuoitre.vn|2026-10-18 21:55:57
+BOOKMARK|BM03|admin|Server Test Localhost (GET/POST/HEAD)|http://localhost:8088/vku-demo|2026-10-18 21:55:57
+BOOKMARK|BM04|admin|Example Standard HTML|http://example.com|2026-10-18 21:55:57
+LOGIN_EVENT|admin|2026-10-18 21:56:50|NACHT-PC (192.168.1.204)|Dang nhap thanh cong (Lan thu 1)
+REQUEST_FILE_LOG|REQ411597|admin|2026-10-18 21:56:51|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1804|8|4|6|3|Khong co
+REQUEST_FILE_LOG|REQ579703|admin|2026-10-18 21:59:39|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1804|8|4|6|3|Khong co
+REQUEST_FILE_LOG|REQ580278|admin|2026-10-18 21:59:40|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1804|8|4|6|3|Khong co
+REQUEST_FILE_LOG|REQ580897|admin|2026-10-18 21:59:40|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1804|8|4|6|3|Khong co
+REQUEST_FILE_LOG|REQ587446|admin|2026-10-18 21:59:47|GET|http://vku.udn.vn|301|0|0|0|0|0|Khong co
+REQUEST_FILE_LOG|REQ598567|admin|2026-10-18 21:59:58|GET|http://vku.udn.vn|301|0|0|0|0|0|Khong co
+REQUEST_FILE_LOG|REQ604164|admin|2026-10-18 22:00:04|GET|http://vku.udn.vn|301|0|0|0|0|0|Khong co
+REQUEST_FILE_LOG|REQ606616|admin|2026-10-18 22:00:06|GET|http://vku.udn.vn|301|0|0|0|0|0|Khong co
+REQUEST_FILE_LOG|REQ609054|admin|2026-10-18 22:00:09|GET|http://vku.udn.vn|301|0|0|0|0|0|Khong co
+LOGIN_EVENT|admin|2026-10-26 13:06:38|NACHT-PC (10.52.2.10)|Dang nhap thanh cong (Lan thu 2)
+REQUEST_FILE_LOG|REQ799043|admin|2026-10-26 13:06:39|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1801|8|4|6|3|Khong co
+LOGIN_EVENT|admin|2026-10-26 13:26:26|NACHT-PC (10.52.2.10)|Dang nhap thanh cong (Lan thu 3)
+REQUEST_FILE_LOG|REQ986958|admin|2026-10-26 13:26:26|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1801|8|4|6|3|Khong co
+REQUEST_FILE_LOG|REQ997658|admin|2026-10-26 13:26:37|GET|http://localhost:8088/vku-demo?course=network_programming&group=1#section1|200|1801|8|4|6|3|Khong co
